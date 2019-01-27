@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Software and tech | Kristoffer Lorentsen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 27 Jan 2019 19:30:13 +0100</lastBuildDate>
     
 	<atom:link href="https://krilor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Diagrams</title>
+      <link>https://krilor.github.io/tags/diagrams/</link>
+      <pubDate>Sun, 27 Jan 2019 19:30:13 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/diagrams/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drawing</title>
+      <link>https://krilor.github.io/tags/drawing/</link>
+      <pubDate>Sun, 27 Jan 2019 19:30:13 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/drawing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://krilor.github.io/tags/hugo/</link>
+      <pubDate>Sun, 27 Jan 2019 19:30:13 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

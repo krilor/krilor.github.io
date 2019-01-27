@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Kristoffer Lorentsen">
+    <meta name="description" content="Kristoffer Lorentsen take on tech and code.">
+    <meta name="keywords" content="blog,developer,personal,software">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Drawing diagrams for use with Hugo - what software to choose?"/>
+<meta name="twitter:description" content="I explore what diagram drawing software to use with Hugo."/>
+
+
+    <base href="https://krilor.github.io/posts/diagrams-in-hugo/">
+    <title>
+  Drawing diagrams for use with Hugo - what software to choose? · Software and tech | Kristoffer Lorentsen
+</title>
+
+    <link rel="canonical" href="https://krilor.github.io/posts/diagrams-in-hugo/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://krilor.github.io/css/coder.min.ac37073bc2826cd28ef57364a9fe339de7ebcb26dafc22fd832cb35cf5b1d048.css" integrity="sha256-rDcHO8KCbNKO9XNkqf4znefryyba/CL9gyyzXPWx0Eg=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://krilor.github.io/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://krilor.github.io/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.54-DEV" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://krilor.github.io/">
+      Software and tech | Kristoffer Lorentsen
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://krilor.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://krilor.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Drawing diagrams for use with Hugo - what software to choose?</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-01-27T19:30:13&#43;01:00'>
+                January 27, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3 minutes read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://krilor.github.io/categories/blogging/">blogging</a>
+      <span class="separator">•</span>
+    <a href="https://krilor.github.io/categories/hugo/">hugo</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://krilor.github.io/tags/hugo/">hugo</a>
+      <span class="separator">•</span>
+    <a href="https://krilor.github.io/tags/drawing/">drawing</a>
+      <span class="separator">•</span>
+    <a href="https://krilor.github.io/tags/diagrams/">diagrams</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+
+<p>Now that I have a blog going the first thing I am pretty certain that I&rsquo;ll need is some tool or software to draw diagrams with. More often than not, when discussing or writing about software, a diagram just helps with explaining what is going on.</p>
+
+<p>In this post I explore my options and explain how I set up my tool(s) of choice.</p>
+
+<h2 id="the-candidates">The candidates</h2>
+
+<p>I quick round of good ol&rsquo; googling gave me the following options.</p>
+
+<ul>
+<li><a href="https://mermaidjs.github.io/">Mermaid</a> - <code>Free</code>
+
+<ul>
+<li>Charts are described in the <code>md</code> files and rendered in the browser using JS.</li>
+</ul></li>
+<li><a href="https://www.draw.io/">draw.io</a> - <code>Free</code>
+
+<ul>
+<li>Draw in the browser and save in git as xml. Export as svg or png.</li>
+</ul></li>
+<li><a href="https://docs.google.com/drawings/">Google Drawings</a> - <code>Free</code>
+
+<ul>
+<li>Save in Google Drive and publish directly to the web.</li>
+</ul></li>
+</ul>
+
+<p>Naturally, I also came across a few paid services like <a href="https://www.gliffy.com/">Gliffy</a> and <a href="https://www.lucidchart.com/">Lucidchart</a>, but didn&rsquo;t end up spending any time digging into what they have to offer the free options don&rsquo;t.</p>
+
+<h2 id="the-two-winners">The two winners</h2>
+
+<p>While I really like all three options as tools for drawing, I ended up with Mermaid and Google Drawings just because it presented the easiest workflows. Updating a chart in draw.io seemed like a hassle:</p>
+
+<ol>
+<li>Open draw.io and locate xml file from git repo</li>
+<li>Do changes</li>
+<li>Save xml in git</li>
+<li>Export to png</li>
+<li>Republish site</li>
+<li>Commit all the things</li>
+</ol>
+
+<p>In Google Drawing it would just be to change the drawing and it would automatically be visible on the page. With Mermaid, it is just a matter of changing the content, regenerating the site and committing all the things.</p>
+
+<h3 id="my-mermaid-setup">My Mermaid setup</h3>
+
+<p>First, I stole this <a href="https://github.com/matcornic/hugo-theme-learn/blob/master/layouts/shortcodes/mermaid.html">mermaid shortcode template</a> from <a href="https://github.com/matcornic">Mathieu Cornic</a> and added it to my Hugo setup.</p>
+
+<p>Then, I needed to add the Mermaid js file. I wanted to have it delivered by a CDN (since I am hosting on github.io), so I just included the following in the footer of my Hugo layout (had to copy the footer from my chosen theme and add it in my <code>layouts</code> folder). I got the script tags from the <a href="https://mermaidjs.github.io/usage.html">Mermaid docs</a> and use the <a href="https://gohugo.io/templates/shortcode-templates/#checking-for-existence">HasShortcode</a> condition to check if the script is actually needed, i.e. shortcode is in use, before including it.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ if ( .HasShortcode &#34;mermaid&#34; ) }}
+  &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
+  &lt;<span style="font-weight:bold">script</span>&gt;mermaid.initialize({startOnLoad:<span style="color:#fff;font-weight:bold">true</span>});&lt;/<span style="font-weight:bold">script</span>&gt;
+{{ end }}</code></pre></div>
+<p>Adding charts is then as easy as.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">    {{&lt;mermaid&gt;}}<span style="color:#f00">
+</span><span style="color:#f00"></span>    graph LR;<span style="color:#f00">
+</span><span style="color:#f00"></span>        A --- B<span style="color:#f00">
+</span><span style="color:#f00"></span>        B--&gt;C[fa:fa-ban forbidden]<span style="color:#f00">
+</span><span style="color:#f00"></span>        B--&gt;D(fa:fa-spinner);<span style="color:#f00">
+</span><span style="color:#f00"></span>    {{&lt;/mermaid&gt;}}</code></pre></div>
+<p>Which produces</p>
+
+
+<div class="mermaid" align="center">
+graph LR;
+A --- B
+B-->C[fa:fa-ban forbidden]
+B-->D(fa:fa-spinner);
+</div>
+
+<h3 id="google-drawings-example">Google Drawings example</h3>
+
+<p>Publising from Google Drawings is as simple as creating the drawing, hitting <code>File</code> -&gt; <code>Publish to the Web</code> and then including it using normal markdown like:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![<span style="font-weight:bold">Sample image from Google Drawing</span>](<span style="color:#007f7f">https://docs.google.com/drawings/d/e/2PACX-1vTK9BdG4Wkck3XhUiJHWHbItePD8GXjbJIkXfnkm4q167QpYTdBJ8foottxPX45j4kh5Q5cWXTA9mJR/pub?w=480&amp;h=270</span>)</code></pre></div>
+<p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTK9BdG4Wkck3XhUiJHWHbItePD8GXjbJIkXfnkm4q167QpYTdBJ8foottxPX45j4kh5Q5cWXTA9mJR/pub?w=480&amp;h=270" alt="Sample image from Google Drawing" /></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Serving diagrams using Hugo on GitHub pages turned out to be pretty easy. I hope that the combination of Mermaid and Google Drawings will serve me well going forward!</p>
+
+      </div>
+
+      <footer>
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+    <section class="container">
+      
+        <p>I write about anything code and tech related.</p>
+      
+       © 2019
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+  <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+
+  
+    </main>
+
+    
+
+  </body>
+
+</html>
