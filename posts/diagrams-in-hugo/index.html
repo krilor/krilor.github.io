@@ -161,17 +161,17 @@
 <p>First, I stole this <a href="https://github.com/matcornic/hugo-theme-learn/blob/master/layouts/shortcodes/mermaid.html">mermaid shortcode template</a> from <a href="https://github.com/matcornic">Mathieu Cornic</a> and added it to my Hugo setup.</p>
 
 <p>Then, I needed to add the Mermaid js file. I wanted to have it delivered by a CDN (since I am hosting on github.io), so I just included the following in the footer of my Hugo layout (had to copy the footer from my chosen theme and add it in my <code>layouts</code> folder). I got the script tags from the <a href="https://mermaidjs.github.io/usage.html">Mermaid docs</a> and use the <a href="https://gohugo.io/templates/shortcode-templates/#checking-for-existence">HasShortcode</a> condition to check if the script is actually needed, i.e. shortcode is in use, before including it.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ if ( .HasShortcode &#34;mermaid&#34; ) }}
-  &lt;<span style="font-weight:bold">script</span> <span style="color:#007f7f">src</span>=<span style="color:#0ff;font-weight:bold">&#34;https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
-  &lt;<span style="font-weight:bold">script</span>&gt;mermaid.initialize({startOnLoad:<span style="color:#fff;font-weight:bold">true</span>});&lt;/<span style="font-weight:bold">script</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ if ( .HasShortcode &#34;mermaid&#34; ) }}
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">mermaid</span>.<span style="color:#a6e22e">initialize</span>({<span style="color:#a6e22e">startOnLoad</span><span style="color:#f92672">:</span><span style="color:#66d9ef">true</span>});&lt;/<span style="color:#f92672">script</span>&gt;
 {{ end }}</code></pre></div>
 <p>Adding charts is then as easy as.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">    {{&lt;mermaid&gt;}}<span style="color:#f00">
-</span><span style="color:#f00"></span>    graph LR;<span style="color:#f00">
-</span><span style="color:#f00"></span>        A --- B<span style="color:#f00">
-</span><span style="color:#f00"></span>        B--&gt;C[fa:fa-ban forbidden]<span style="color:#f00">
-</span><span style="color:#f00"></span>        B--&gt;D(fa:fa-spinner);<span style="color:#f00">
-</span><span style="color:#f00"></span>    {{&lt;/mermaid&gt;}}</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">    {{&lt;mermaid&gt;}}<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    graph LR;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        A --- B<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        B--&gt;C[fa:fa-ban forbidden]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>        B--&gt;D(fa:fa-spinner);<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    {{&lt;/mermaid&gt;}}</code></pre></div>
 <p>Which produces</p>
 
 
@@ -185,7 +185,7 @@ B-->D(fa:fa-spinner);
 <h3 id="google-drawings-example">Google Drawings example</h3>
 
 <p>Publising from Google Drawings is as simple as creating the drawing, hitting <code>File</code> -&gt; <code>Publish to the Web</code> and then including it using normal markdown like:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![<span style="font-weight:bold">Sample image from Google Drawing</span>](<span style="color:#007f7f">https://docs.google.com/drawings/d/e/2PACX-1vTK9BdG4Wkck3XhUiJHWHbItePD8GXjbJIkXfnkm4q167QpYTdBJ8foottxPX45j4kh5Q5cWXTA9mJR/pub?w=480&amp;h=270</span>)</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![<span style="color:#f92672">Sample image from Google Drawing</span>](<span style="color:#a6e22e">https://docs.google.com/drawings/d/e/2PACX-1vTK9BdG4Wkck3XhUiJHWHbItePD8GXjbJIkXfnkm4q167QpYTdBJ8foottxPX45j4kh5Q5cWXTA9mJR/pub?w=480&amp;h=270</span>)</code></pre></div>
 <p><img src="https://docs.google.com/drawings/d/e/2PACX-1vTK9BdG4Wkck3XhUiJHWHbItePD8GXjbJIkXfnkm4q167QpYTdBJ8foottxPX45j4kh5Q5cWXTA9mJR/pub?w=480&amp;h=270" alt="Sample image from Google Drawing" /></p>
 
 <h2 id="summary">Summary</h2>

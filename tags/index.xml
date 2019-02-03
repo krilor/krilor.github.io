@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Software and tech | Kristoffer Lorentsen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Jan 2019 19:30:13 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 03 Feb 2019 11:01:33 +0100</lastBuildDate>
     
 	<atom:link href="https://krilor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Db</title>
+      <link>https://krilor.github.io/tags/db/</link>
+      <pubDate>Sun, 03 Feb 2019 11:01:33 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/db/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Diagrams</title>
@@ -35,6 +44,33 @@
       <pubDate>Sun, 27 Jan 2019 19:30:13 +0100</pubDate>
       
       <guid>https://krilor.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pattern</title>
+      <link>https://krilor.github.io/tags/pattern/</link>
+      <pubDate>Sun, 03 Feb 2019 11:01:33 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgres</title>
+      <link>https://krilor.github.io/tags/postgres/</link>
+      <pubDate>Sun, 03 Feb 2019 11:01:33 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/postgres/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>https://krilor.github.io/tags/sql/</link>
+      <pubDate>Sun, 03 Feb 2019 11:01:33 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/sql/</guid>
       <description></description>
     </item>
     

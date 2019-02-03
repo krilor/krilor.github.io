@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://krilor.github.io/posts/simple-rdbms-queue-pattern/</loc>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://krilor.github.io/posts/diagrams-in-hugo/</loc>
     <lastmod>2019-01-27T19:30:13+01:00</lastmod>
   </url>
@@ -26,6 +31,12 @@
   <url>
     <loc>https://krilor.github.io/categories/</loc>
     <lastmod>2019-01-27T19:30:13+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/tags/db/</loc>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -54,20 +65,44 @@
   </url>
   
   <url>
+    <loc>https://krilor.github.io/tags/pattern/</loc>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/categories/poc/</loc>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/tags/postgres/</loc>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://krilor.github.io/posts/</loc>
-    <lastmod>2019-01-27T19:30:13+01:00</lastmod>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://krilor.github.io/</loc>
-    <lastmod>2019-01-27T19:30:13+01:00</lastmod>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/tags/sql/</loc>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://krilor.github.io/tags/</loc>
-    <lastmod>2019-01-27T19:30:13+01:00</lastmod>
+    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
     <priority>0</priority>
   </url>
   

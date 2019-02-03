@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql on Software and tech | Kristoffer Lorentsen</title>
+    <link>https://krilor.github.io/tags/sql/</link>
+    <description>Recent content in Sql on Software and tech | Kristoffer Lorentsen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Feb 2019 11:01:33 +0100</lastBuildDate>
+    
+	<atom:link href="https://krilor.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A simple RDBMS queue pattern</title>
+      <link>https://krilor.github.io/posts/simple-rdbms-queue-pattern/</link>
+      <pubDate>Sun, 03 Feb 2019 11:01:33 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/posts/simple-rdbms-queue-pattern/</guid>
+      <description>I recently attended a MeetUp with Axel Fontaine where he briefly threw out an example of how to create a queue in an relational database. In this post I have a closer look at that idea and test it out in PostgreSQL.
+So this is the gist of the idea. A consumer would consume messages while placing locks on the rows being processed, leveraging the ACID properties of the database.</description>
+    </item>
+    
+  </channel>
+</rss>

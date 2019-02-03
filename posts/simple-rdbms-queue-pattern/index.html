@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Kristoffer Lorentsen">
+    <meta name="description" content="Kristoffer Lorentsen take on tech and code.">
+    <meta name="keywords" content="blog,developer,personal,software">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A simple RDBMS queue pattern"/>
+<meta name="twitter:description" content="How to set up a queue in PostgreSQL and benefit from the ACID properties."/>
+
+
+    <base href="https://krilor.github.io/posts/simple-rdbms-queue-pattern/">
+    <title>
+  A simple RDBMS queue pattern · Software and tech | Kristoffer Lorentsen
+</title>
+
+    <link rel="canonical" href="https://krilor.github.io/posts/simple-rdbms-queue-pattern/">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:300,700|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://krilor.github.io/css/coder.min.ac37073bc2826cd28ef57364a9fe339de7ebcb26dafc22fd832cb35cf5b1d048.css" integrity="sha256-rDcHO8KCbNKO9XNkqf4znefryyba/CL9gyyzXPWx0Eg=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://krilor.github.io/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://krilor.github.io/img/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.54-DEV" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://krilor.github.io/">
+      Software and tech | Kristoffer Lorentsen
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://krilor.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://krilor.github.io/about/">About</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">A simple RDBMS queue pattern</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-02-03T11:01:33&#43;01:00'>
+                February 3, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3 minutes read
+            </span>
+          </div>
+          <div class="categories">
+  <i class="fas fa-folder"></i>
+    <a href="https://krilor.github.io/categories/poc/">poc</a></div>
+
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://krilor.github.io/tags/postgres/">postgres</a>
+      <span class="separator">•</span>
+    <a href="https://krilor.github.io/tags/db/">db</a>
+      <span class="separator">•</span>
+    <a href="https://krilor.github.io/tags/sql/">sql</a>
+      <span class="separator">•</span>
+    <a href="https://krilor.github.io/tags/pattern/">pattern</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+
+<p>I recently attended a <a href="https://www.meetup.com/Oslo-Software-Architecture/events/257922639/">MeetUp with Axel Fontaine</a> where he briefly threw out an example of how to create a queue in an relational database. In this post I have a closer look at that idea and test it out in <a href="https://www.postgresql.org/">PostgreSQL</a>.</p>
+
+<p>So this is the gist of the idea. A consumer would consume messages while placing locks on the rows being processed, leveraging the ACID properties of the database.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">BEGIN</span>;
+<span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">FROM</span> queue
+<span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> (
+    <span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> queue <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> id <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">FOR</span> <span style="color:#66d9ef">UPDATE</span> <span style="color:#75715e">-- lock the row
+</span><span style="color:#75715e"></span>    SKIP LOCKED <span style="color:#75715e">-- skip locked rows
+</span><span style="color:#75715e"></span>RETURNING message;
+
+<span style="color:#75715e">-- Do stuff
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">COMMIT</span>; <span style="color:#75715e">-- Once responsibility of the message has been taken
+</span><span style="color:#75715e">-- or ROLLBACK if something dies or goes south.</span></code></pre></div>
+<p>The queue table would look something like this:</p>
+
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>MESSAGE</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>MESSAGE_ONE</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>MESSAGE_TWO</td>
+</tr>
+</tbody>
+</table>
+
+<p>Of course, this would be more helpful if the messages where an actual (JSON) message, but this serves as an example.</p>
+
+<p>So, one part of the system would create messages and put them on the queue and another would consume from the queue. There are tons of use cases for such functionality, and that is probably why there are so many queue solutions out there.</p>
+
+<p>The idea here, however, is that you probably allready have a database, so why not use it? KISS!</p>
+
+<p>Let&rsquo;s use docker to spin up a new <a href="https://hub.docker.com/_/postgres">Postgres database using docker</a> and connect to it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run  --name queue-db -p <span style="color:#ae81ff">5432</span>:5432 -d postgres:alpine
+docker exec -it queue-db bash
+psql -U postgres</code></pre></div>
+
+
+<p>At this point we are connected to the DB and can specify what we need. I&rsquo;ll create a <code>queue</code> table for the queue and a <code>queue_log</code> table to keep track of processed messages and when they have been processed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#960050;background-color:#1e0010">\</span>l
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> queue;
+
+<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">c</span> queue
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> queue (
+    id SERIAL <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+    message VARCHAR(<span style="color:#ae81ff">16</span>)
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> queue_log (
+    id INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+    message VARCHAR(<span style="color:#ae81ff">16</span>),
+    processed <span style="color:#66d9ef">TIMESTAMP</span>
+);
+
+<span style="color:#960050;background-color:#1e0010">\</span>dt
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">FUNCTION</span> log_queue_message() <span style="color:#66d9ef">RETURNS</span> <span style="color:#66d9ef">trigger</span> <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">$</span>log_queue_message$
+    <span style="color:#66d9ef">BEGIN</span>
+        <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> queue_log <span style="color:#66d9ef">VALUES</span> ( <span style="color:#66d9ef">OLD</span>.<span style="color:#f92672">*</span>, <span style="color:#66d9ef">CURRENT_TIMESTAMP</span> );
+        <span style="color:#66d9ef">RETURN</span> <span style="color:#66d9ef">OLD</span>;
+    <span style="color:#66d9ef">END</span>;
+<span style="color:#960050;background-color:#1e0010">$</span>log_queue_message$ <span style="color:#66d9ef">LANGUAGE</span> plpgsql <span style="color:#66d9ef">VOLATILE</span>;
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TRIGGER</span> trg_queue_log <span style="color:#66d9ef">AFTER</span> <span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">ON</span> queue
+    <span style="color:#66d9ef">FOR</span> <span style="color:#66d9ef">EACH</span> <span style="color:#66d9ef">ROW</span> <span style="color:#66d9ef">EXECUTE</span> <span style="color:#66d9ef">FUNCTION</span> log_queue_message();</code></pre></div>
+<p>Then a message producer would insert messages like so.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> queue (message) <span style="color:#66d9ef">values</span> (<span style="color:#e6db74">&#39;MESSAGE_ONE&#39;</span>);
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> queue (message) <span style="color:#66d9ef">values</span> (<span style="color:#e6db74">&#39;MESSAGE_TWO&#39;</span>);
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> queue (message) <span style="color:#66d9ef">values</span> (<span style="color:#e6db74">&#39;MESSAGE_THREE&#39;</span>);
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> queue (message) <span style="color:#66d9ef">values</span> (<span style="color:#e6db74">&#39;MESSAGE_FOUR&#39;</span>);</code></pre></div>
+<p>Consumers would use the pattern outlined on the top of the post.</p>
+
+<h2 id="how-it-fits-together">How it fits together</h2>
+
+<p>First of all, consumers and producers can <code>INSERT</code> and <code>DELETE</code> in <code>queue</code> without caring about keeping track of what is going on, just <code>COMMIT</code> then they are done.</p>
+
+
+<div class="mermaid" align="center">
+graph LR
+    Q[queue]
+    C1((Consumer))
+    C2((Consumer))
+    C3((Consumer))
+    P1((Producer))
+    P2((Producer))
+    P1 -- Insert --> Q
+    P2 -- Insert --> Q
+    Q -- Consume/Delete --> C1
+    Q -- Consume/Delete --> C2
+    Q -- Consume/Delete --> C3
+</div>
+
+<p>At the same time, the function, trigger and <code>queue_log</code> table will ensure that we keep track of which messages has been consumed.</p>
+
+
+<div class="mermaid" align="center">
+graph LR
+    Q[queue]
+    L[queue_log]
+    T(trg_queue_log)
+    F(log_queue_message)
+    Q -- Trigger on DELETE --> T
+    T -- Execute --> F
+    F -- Insert with timestamp --> L
+</div>
+
+<h2 id="summary">Summary</h2>
+
+<p>Using a RDBMS for queueing is maybe not the most celebrated pattern in software achitecture. In fact, it&rsquo;s actually a bit contested. I agree that one should evaluate using purpose-built technologies to handle message queueing, but in a situation where you allready have a database in your app and you want to keep things simple, then this pattern could be an easy (and pretty decent) way to add a queue.</p>
+
+      </div>
+
+      <footer>
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+    <section class="container">
+      
+        <p>I write about anything code and tech related.</p>
+      
+       © 2019
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+  <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+
+  
+    </main>
+
+    
+
+  </body>
+
+</html>
