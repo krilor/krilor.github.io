@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://krilor.github.io/posts/i-just-did-my-first-sql-injection/</loc>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://krilor.github.io/posts/simple-rdbms-queue-pattern/</loc>
     <lastmod>2019-02-03T11:01:33+01:00</lastmod>
   </url>
@@ -35,6 +40,12 @@
   </url>
   
   <url>
+    <loc>https://krilor.github.io/categories/ctf/</loc>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://krilor.github.io/tags/db/</loc>
     <lastmod>2019-02-03T11:01:33+01:00</lastmod>
     <priority>0</priority>
@@ -49,6 +60,18 @@
   <url>
     <loc>https://krilor.github.io/tags/drawing/</loc>
     <lastmod>2019-01-27T19:30:13+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/categories/hacking/</loc>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/tags/hacksplaining/</loc>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -84,19 +107,31 @@
   
   <url>
     <loc>https://krilor.github.io/posts/</loc>
-    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/categories/security/</loc>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://krilor.github.io/</loc>
-    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://krilor.github.io/tags/sql/</loc>
     <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/tags/sql-injection/</loc>
+    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   

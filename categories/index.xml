@@ -21,6 +21,24 @@
     </item>
     
     <item>
+      <title>Ctf</title>
+      <link>https://krilor.github.io/categories/ctf/</link>
+      <pubDate>Sat, 09 Feb 2019 08:19:35 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/categories/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hacking</title>
+      <link>https://krilor.github.io/categories/hacking/</link>
+      <pubDate>Sat, 09 Feb 2019 08:19:35 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/categories/hacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo</title>
       <link>https://krilor.github.io/categories/hugo/</link>
       <pubDate>Sun, 27 Jan 2019 19:30:13 +0100</pubDate>
@@ -35,6 +53,15 @@
       <pubDate>Sun, 03 Feb 2019 11:01:33 +0100</pubDate>
       
       <guid>https://krilor.github.io/categories/poc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://krilor.github.io/categories/security/</link>
+      <pubDate>Sat, 09 Feb 2019 08:19:35 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/categories/security/</guid>
       <description></description>
     </item>
     

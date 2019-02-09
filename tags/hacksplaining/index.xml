@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hacksplaining on Software and tech | Kristoffer Lorentsen</title>
+    <link>https://krilor.github.io/tags/hacksplaining/</link>
+    <description>Recent content in Hacksplaining on Software and tech | Kristoffer Lorentsen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 09 Feb 2019 08:19:35 +0100</lastBuildDate>
+    
+	<atom:link href="https://krilor.github.io/tags/hacksplaining/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I just did my first SQL injection!</title>
+      <link>https://krilor.github.io/posts/i-just-did-my-first-sql-injection/</link>
+      <pubDate>Sat, 09 Feb 2019 08:19:35 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/posts/i-just-did-my-first-sql-injection/</guid>
+      <description>This week I spent a couple of hours finding my way through Norwegian Police Security Services new job application which required &amp;ldquo;hacking&amp;rdquo; to apply. See the solution on Reddit, GitHub and Kode24. I had a lot of fun trying to figure out the puzzles and it got me excited about learning more.
+While I liked the challenge, I do tend to like to learn in a more structured way. Enter Hacksplaining!</description>
+    </item>
+    
+  </channel>
+</rss>
