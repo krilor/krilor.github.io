@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Software and tech | Kristoffer Lorentsen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Feb 2019 11:01:33 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 10 Feb 2019 06:29:19 +0100</lastBuildDate>
     
 	<atom:link href="https://krilor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ceasar</title>
+      <link>https://krilor.github.io/tags/ceasar/</link>
+      <pubDate>Sun, 10 Feb 2019 06:29:19 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/ceasar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cipher</title>
+      <link>https://krilor.github.io/tags/cipher/</link>
+      <pubDate>Sun, 10 Feb 2019 06:29:19 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/tags/cipher/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Db</title>

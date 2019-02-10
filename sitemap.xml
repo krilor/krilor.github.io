@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://krilor.github.io/posts/ceasar-cipher-in-vue-js/</loc>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://krilor.github.io/posts/i-just-did-my-first-sql-injection/</loc>
     <lastmod>2019-02-09T08:19:35+01:00</lastmod>
   </url>
@@ -40,8 +45,20 @@
   </url>
   
   <url>
+    <loc>https://krilor.github.io/tags/ceasar/</loc>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/tags/cipher/</loc>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://krilor.github.io/categories/ctf/</loc>
-    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,7 +124,7 @@
   
   <url>
     <loc>https://krilor.github.io/posts/</loc>
-    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -119,7 +136,7 @@
   
   <url>
     <loc>https://krilor.github.io/</loc>
-    <lastmod>2019-02-09T08:19:35+01:00</lastmod>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,7 +154,13 @@
   
   <url>
     <loc>https://krilor.github.io/tags/</loc>
-    <lastmod>2019-02-03T11:01:33+01:00</lastmod>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://krilor.github.io/categories/vue/</loc>
+    <lastmod>2019-02-10T06:29:19+01:00</lastmod>
     <priority>0</priority>
   </url>
   

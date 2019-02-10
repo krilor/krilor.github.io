@@ -6,10 +6,20 @@
     <description>Recent content in Ctf on Software and tech | Kristoffer Lorentsen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Feb 2019 08:19:35 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 10 Feb 2019 06:29:19 +0100</lastBuildDate>
     
 	<atom:link href="https://krilor.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Ceasar cipher implemented in Vue.js</title>
+      <link>https://krilor.github.io/posts/ceasar-cipher-in-vue-js/</link>
+      <pubDate>Sun, 10 Feb 2019 06:29:19 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/posts/ceasar-cipher-in-vue-js/</guid>
+      <description>Related to my recent interest in CTF, I&amp;rsquo;ve spent a little time to implement a simple Ceasar cipher in Vue.js. It allows the user to replace letters with another letter some adjustable number of positions up or down the alphabet.
+I did this partly because it&amp;rsquo;s a long time since I&amp;rsquo;ve done any Vue-related work and also because I find other online Ceasar cipher sites to be a bit clunky and not as user friendly.</description>
+    </item>
     
     <item>
       <title>I just did my first SQL injection!</title>
