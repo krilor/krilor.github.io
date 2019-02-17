@@ -6,10 +6,21 @@
     <description>Recent content in Ctf on Software and tech | Kristoffer Lorentsen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Feb 2019 06:29:19 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 07:11:49 +0100</lastBuildDate>
     
 	<atom:link href="https://krilor.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A couple of tools from my first CTF event</title>
+      <link>https://krilor.github.io/posts/tools-from-ctf-event/</link>
+      <pubDate>Sun, 17 Feb 2019 07:11:49 +0100</pubDate>
+      
+      <guid>https://krilor.github.io/posts/tools-from-ctf-event/</guid>
+      <description>Attended my first CTF event yesterday, tghack for beginners. That introduced me to these nice tools:
+ CyberChef - The Cyber Swiss Army Knife CTF crypto challenges pwntools - CTF framework and exploit development library for python  Just used CyberChef to disquise a message. Can you figure out which album title is behind these zeros and ones?
+ 01001011 01001100 01111011 01000001 01101110 01101111 01110100 01101000 01100101 01110010 00100000 01100010 01110010 01101001 01100011 01101011 00100000 01101001 01101110 00100000 01110100 01101000 01100101 00100000 01110111 01100001 01101100 01101100 01111101</description>
+    </item>
     
     <item>
       <title>A Ceasar cipher implemented in Vue.js</title>
